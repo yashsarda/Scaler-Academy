@@ -36,8 +36,6 @@ public:
                     // same row
                     if(x == i && y != j) {
                         if(processRows(x,y,i,j)) {
-                             // if(x == 0 && y == 1)
-                             //    cout << i << ' ' << j << '\n';
                             visited[i][j] = true;
                             countPatterns(i,j,m,n,number + 1, answer);
                             visited[i][j] = false;
@@ -46,8 +44,6 @@ public:
                     }
                     // same column
                     else if(y == j && x != i) {
-                         // if(x == 0 && y == 1)
-                         //    cout << i << ' ' << j << '\n';
                         if(processColumn(x,y,i,j)) {
                             visited[i][j] = true;
                             countPatterns(i,j,m,n,number + 1, answer);
@@ -56,8 +52,6 @@ public:
                     }
                     // same diagonal
                     else if (x + y == i + j || j - i == y - x) {
-                         // if(x == 0 && y == 1)
-                         //    cout << i << ' ' << j << '\n';
                         if(processDiagonal(x,y,i,j)) {
                             visited[i][j] = true;
                             countPatterns(i,j,m,n,number + 1, answer);
@@ -65,8 +59,6 @@ public:
                         }
                     }
                     else {
-                        // if(x == 0 && y == 1)
-                        //     cout << i << ' ' << j << '\n';
                         visited[i][j] = true;
                         countPatterns(i,j, m,n,number + 1,answer);
                         visited[i][j] = false;
