@@ -30,7 +30,7 @@ void dfs(int node, int parent, int number, vector<int>& answer, vector<int>& c)
 {
     // update the tree with compressed value at that particular node
     update(compression[c[node - 1]], 1);
-    // Number of element les than equal to given value is answer of query.
+    // Number of element less than equal to given value is answer of query.
     // Just subtract it from total number of nodes visited till now from root
     answer[node - 1] = number - query(compression[c[node - 1]]);
     for(int child: graph[node]) {
